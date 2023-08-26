@@ -5,14 +5,14 @@ pipeline {
     choice choices: ['apply', 'destroy'], description: 'Select the Appropriate Action Please', name: 'action'
        }
     environment {
-        AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
-        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+        AWS_ACCESS_KEY_ID = credentials('FICKY_AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = credentials('FICKY_AWS_SECRET_ACCESS_KEY')
         AWS_DEFAULT_REGION = "eu-west-2"
     }
     stages {
         stage('Checkout') {
             steps {
-           git branch: 'main', url: 'https://github.com/ooghenekaro/nodejs-webapp.git'
+           git branch: 'main', url: 'https://github.com/OlatundeTai-Lawal/neftlix-react-clone.git'
   
             }
         }
